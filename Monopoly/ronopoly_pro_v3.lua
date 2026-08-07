@@ -1,3 +1,24 @@
+task.spawn(function()
+  local _g = Instance.new("ScreenGui")
+  _g.ResetOnSpawn = false
+  _g.Parent = game:GetService("CoreGui")
+  local _l = Instance.new("TextLabel")
+  _l.Size = UDim2.new(0, 240, 0, 38)
+  _l.Position = UDim2.new(0.5, -120, 0, 10)
+  _l.BackgroundColor3 = Color3.fromRGB(0, 180, 70)
+  _l.TextColor3 = Color3.new(1, 1, 1)
+  _l.Font = Enum.Font.GothamBold
+  _l.TextSize = 15
+  _l.Text = "FNAN Script Loaded!"
+  _l.Parent = _g
+  local _c = Instance.new("UICorner")
+  _c.CornerRadius = UDim.new(0, 10)
+  _c.Parent = _l
+  task.wait(3)
+  _l:Destroy()
+  if _g.Parent then _g:Destroy() end
+end)
+
 -- Made by FNAN AI SCRIPTS
 -- Ronopoly Pro v3.0 - Delta Executor
 -- 10K Anti-Cheat Bypass Edition
