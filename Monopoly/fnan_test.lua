@@ -1,0 +1,67 @@
+local gui = Instance.new("ScreenGui")
+gui.Name = "FNANTest"
+gui.ResetOnSpawn = false
+pcall(function() gui.Parent = game.CoreGui end)
+if not gui.Parent then
+  gui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+end
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 280, 0, 180)
+frame.Position = UDim2.new(0.5, -140, 0.5, -90)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 12)
+local bar = Instance.new("Frame")
+bar.Size = UDim2.new(1, 0, 0, 36)
+bar.BackgroundColor3 = Color3.fromRGB(0, 200, 80)
+bar.Parent = frame
+Instance.new("UICorner", bar).CornerRadius = UDim.new(0, 12)
+local fix = Instance.new("Frame")
+fix.Size = UDim2.new(1, 0, 0, 12)
+fix.Position = UDim2.new(0, 0, 1, -12)
+fix.BackgroundColor3 = Color3.fromRGB(0, 200, 80)
+fix.Parent = bar
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, -40, 1, 0)
+title.BackgroundTransparency = 1
+title.Text = "FNAN AI - TEST"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 15
+title.Parent = bar
+title.Position = UDim2.new(0, 12, 0, 0)
+local btn = Instance.new("TextButton")
+btn.Size = UDim2.new(1, -16, 0, 36)
+btn.Position = UDim2.new(0, 8, 0, 50)
+btn.BackgroundColor3 = Color3.fromRGB(0, 200, 80)
+btn.Text = "IT WORKS!"
+btn.TextColor3 = Color3.new(1, 1, 1)
+btn.Font = Enum.Font.GothamBold
+btn.TextSize = 14
+btn.Parent = frame
+Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 8)
+local info = Instance.new("TextLabel")
+info.Size = UDim2.new(1, -16, 0, 40)
+info.Position = UDim2.new(0, 8, 0, 96)
+info.BackgroundTransparency = 1
+info.Text = "If you see this, the script works!"
+info.TextColor3 = Color3.fromRGB(200, 200, 200)
+info.Font = Enum.Font.Gotham
+info.TextSize = 12
+info.TextWrapped = true
+info.Parent = frame
+local xbtn = Instance.new("TextButton")
+xbtn.Size = UDim2.new(0, 28, 0, 28)
+xbtn.Position = UDim2.new(1, -32, 0, 4)
+xbtn.BackgroundColor3 = Color3.fromRGB(220, 50, 50)
+xbtn.Text = "X"
+xbtn.TextColor3 = Color3.new(1, 1, 1)
+xbtn.Font = Enum.Font.GothamBold
+xbtn.TextSize = 13
+xbtn.Parent = bar
+Instance.new("UICorner", xbtn).CornerRadius = UDim.new(0, 6)
+xbtn.MouseButton1Click:Connect(function()
+  gui:Destroy()
+end)
